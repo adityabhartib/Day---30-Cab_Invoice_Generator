@@ -16,5 +16,4 @@ public class CabInvoiceGeneratorTest {
         double total_fare= cabInvoiceGenerator.calculateTotalFair(0.1,4);
         Assertions.assertEquals(total_fare,5);
     }
-
 }
