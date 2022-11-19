@@ -6,6 +6,6 @@ public class CabInvoiceGenerator {
     static final  double MINIMUM_COST=5;
     public double calculateTotalFair(double distance, double time) {
         double cost =distance*COST_PER_KM+time*COST_PER_MINUTE;
-        return cost;
+        return cost<MINIMUM_COST ? MINIMUM_COST : cost;
     }
 }
