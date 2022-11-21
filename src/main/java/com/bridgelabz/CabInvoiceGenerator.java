@@ -10,7 +10,7 @@ public class CabInvoiceGenerator {
         return cost < MINIMUM_COST ? MINIMUM_COST : cost;
     }
 
-    public double calculateAggregateFair(Ride[] rides) {
+    public static double calculateAggregateFair(Ride[] rides) {
         double cost = 0;
         for (Ride ride : rides) {
             cost += ride.getDistance() * COST_PER_KM + ride.getTime() * COST_PER_MINUTE;
@@ -18,10 +18,10 @@ public class CabInvoiceGenerator {
         return cost;
     }
 
-    public Invoice generateInvoice(Ride[] rides) {
-        double totalFare = calculateAggregateFair(rides);
+    public static Invoice generateInvoice(Ride[] rides) {
+        double totalFare =calculateAggregateFair(rides);
         int totalRides = rides.length;
         double averageFare = totalFare / totalRides;
-        return new Invoice(averageFare, totalRides,totalFare);
+        return new Invoice(averageFare, totalRides, totalFare);
     }
 }
